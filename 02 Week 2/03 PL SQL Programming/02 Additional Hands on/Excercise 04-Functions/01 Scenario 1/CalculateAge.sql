@@ -1,0 +1,14 @@
+DROP FUNCTION IF EXISTS CalculateAge;
+DELIMITER $$
+
+CREATE FUNCTION CalculateAge(p_dob DATE)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN TIMESTAMPDIFF(YEAR, p_dob, CURDATE());
+END$$
+
+DELIMITER ;
+
+-- Calculating the age
+SELECT Name, DOB, CalculateAge(DOB) AS Age FROM Customers;
