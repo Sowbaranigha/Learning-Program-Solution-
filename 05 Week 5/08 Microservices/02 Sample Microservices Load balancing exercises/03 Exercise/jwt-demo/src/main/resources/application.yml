@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: jwt-demo
+
+  security:
+    jwt:
+      secret: MySuperSecretKeyThatIsLongEnough1234567890!
+
+server:
+  port: 8081  # Change if needed
